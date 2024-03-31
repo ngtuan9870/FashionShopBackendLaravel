@@ -20,9 +20,10 @@ return new class extends Migration
             $table->string("image");
             $table->string("description");
             $table->string("waranty");
-            $table->string("accessories");
             $table->string("condition");
             $table->string("featured");
+            $table->unsignedBigInteger("category_id");
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }
